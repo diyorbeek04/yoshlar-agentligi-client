@@ -20,31 +20,35 @@ import TadbirlarPage from "../pages/tadbirlar";
 import AgentlikHaqidaPage from "../pages/agetlik_haqida";
 import MaqsadVaVazifalarPage from "../pages/maqsad_va_vazifalar";
 import AgentlikTuzilmasiPage from "../pages/agentlik_tuzilmasi";
+import ImkoniyatlarBatafsilComponent from "../components/imkoniyatlar_batafsil/imkonyatlar_component";
 
 function RouterComponent() {
-   return(
+   return (
       <Routes>
-         <Route path={"/"} element={<AsosiySahifaPage/>} />
-         <Route path={"/yangiliklar"} element={<YangiliklarPage/>} />
-         <Route path={"/yangiliklar/batafsil-yangiliklar"} element={<YangiliklarBatafsilPage/>} />
-         <Route path={"/loyihalar"} element={<LoyihalarPage/>} />
-         <Route path={"/loyihalar/batafsil-loyihalar"} element={<LoyihalarBatafsilPage/>} />
-         <Route path={"/imkoniyatlar"} element={<ImkoniyatlarPage/>} />
-         <Route path={"/imkoniyatlar/batafsil-imkoniyatlar"} element={<ImkoniyatlarBatafsilPage/>} />
-         <Route path={"/biz-haqimizda"} element={<AgentlikHaqidaPage/>} />
-         <Route path={"/boglanish"} element={<BoglanishComponent/>} />
-         <Route path={"/rahbariyat"} element={<RahbariyatPage/>} />
-         <Route path={"/rahbariyat/batafsil-rahbariyat"} element={<RahbariyatMorePage/>} />
-         <Route path={"/rahbariyat/batafsil-rahbariyat"} element={<RahbariyatMorePage/>} />
-         <Route path={"/hududiy-boshqarmalar"} element={<HuquqiyBoshqarmaPage/>} />
-         <Route path={"/fotogaleriya"} element={<FotogaleriyaPage/>} />
-         <Route path={"/fotogaleriya/fotogaleriya-batafsil"} element={<FotogaleriyaBatafsilPage/>} />
-         <Route path={"/ochiq-malumotlar"} element={<OchiqMalumotlarPage/>} />
-         <Route path={"/videogaleriya"} element={<VideogaleriyaPage/>} />
-         <Route path={"/videogaleriya/batafsil-videogaleriya"} element={<VideogaleriyaBatafsilPage/>} />
-         <Route path={"/tadbirlar"} element={<TadbirlarPage/>} />
-         <Route path={"/maqsad-va-vazifalar"} element={<MaqsadVaVazifalarPage/>} />
-         <Route path={"/agentlik-tuzilmasi"} element={<AgentlikTuzilmasiPage/>} />
+         <Route path={"/"} element={<AsosiySahifaPage />} />
+         <Route path={"/yangiliklar"} element={<YangiliklarPage />} />
+         <Route path={"/yangiliklar/batafsil-yangiliklar"} element={<YangiliklarBatafsilPage />} />
+         <Route path={"/loyihalar"} element={<LoyihalarPage />} />
+         <Route path={"/loyihalar/batafsil-loyihalar"} element={<LoyihalarBatafsilPage />} />
+         <Route path={"/imkoniyatlar"} element={<ImkoniyatlarPage />} />
+         <Route path={"/imkoniyatlar/batafsil-imkoniyatlar"} element={<ImkoniyatlarBatafsilPage />} />
+         <Route path={"/biz-haqimizda"} element={<AgentlikHaqidaPage />} />
+         <Route path={"/boglanish"} element={<BoglanishComponent />} />
+         <Route path={"/rahbariyat"} element={<RahbariyatPage />} />
+         <Route path={"/rahbariyat/batafsil-rahbariyat"} element={<RahbariyatMorePage />} />
+         <Route path={"/rahbariyat/batafsil-rahbariyat"} element={<RahbariyatMorePage />} />
+         <Route path={"/hududiy-boshqarmalar"} element={<HuquqiyBoshqarmaPage />} />
+         <Route path={"/fotogaleriya"} element={<FotogaleriyaPage />} />
+         <Route path={"/fotogaleriya/fotogaleriya-batafsil"} element={<FotogaleriyaBatafsilPage />} />
+         <Route path={"/ochiq-malumotlar"} element={<OchiqMalumotlarPage />} />
+         <Route path={"/videogaleriya"} element={<VideogaleriyaPage />} />
+         <Route path={"/videogaleriya/batafsil-videogaleriya"} element={<VideogaleriyaBatafsilPage />} />
+         <Route path={"/tadbirlar"} element={<TadbirlarPage />} />
+         <Route path={"/maqsad-va-vazifalar"} element={<MaqsadVaVazifalarPage />} />
+         <Route path={"/agentlik-tuzilmasi"} element={<AgentlikTuzilmasiPage />} />
+         <Route path="/imkoniyatlar/:id" element={<ImkoniyatlarBatafsilComponent />} />
+         <Route path="/yangiliklar/:id" element={<YangiliklarBatafsilPage />} />
+
 
       </Routes>
    )

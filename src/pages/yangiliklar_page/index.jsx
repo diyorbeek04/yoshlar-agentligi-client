@@ -6,7 +6,6 @@ function YangiliklarPage(){
    return(
       <>
          <YangiliklarBatafsilComponent/>
-         <YangiliklarMavzugaOidComponent/>
 
       </>
    )

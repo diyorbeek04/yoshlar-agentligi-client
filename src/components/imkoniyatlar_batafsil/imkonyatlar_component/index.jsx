@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from './style.module.css'
 import image from './image/image.png'
+import { useParams } from 'react-router-dom'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import axios from "axios";
 
 function ImkoniyatlarBatafsilComponent() {
+   const [data  , setData] = useState([])
+   const {id} = useParams();
+   useEffect( () =>{
+      axios.get(`https://apiastro1.vtormetallmm.ru/possibilities/${id}`)
+      .then((data) => setData(data))
+  }, [])
+
    return (
       <>
          <div className={styles.top}>
@@ -15,25 +24,16 @@ function ImkoniyatlarBatafsilComponent() {
          </div>
          <div className="container">
             <div className={styles.container}>
-               <div className={styles.left}>
-                  <h2 className={styles.h2 - 1}>"O'zbekiston Qahramonlari va yoshlar"</h2>
+        {data?.data?.map((elem , index) => 
+               <div key={index} className={styles.left}>
+                  <h2 className={styles.h2 - 1}>{elem.title}</h2>
                   <small className={styles.small}><CalendarMonthIcon/>21 Sentabr 2021 </small>
                   <img src={image} alt="image" />
                   <p className={styles.p}>
-                     Yoshlarning saylov haqidagi bilimlarini boy etish maqsadida mamlakatimiz bo‘ylab o‘tkazilayotgan "Yosh saylovchi - 2021" forumi Navoiy viloyatida.
-                     <br />
-                     <br />
-                     Navoiy shahridagi “Alisher Navoiy“ nomli madaniyat va istirohat bog'ida forum doirasida "O‘z kelajagimni o‘zim belgilayman, Sizchi?” shiori ostida insholar tanlovi, “Munozara” intellektual bellashuvi, yutuqli viktorina, yoshlarning huquqiy savodxonligini aniqlashga qaratilgan “Siz bilasizmi?” televizion o‘yini va "O'zbekiston uchun 100 g'oya" loyihasi o‘tkazildi.
-
-                     <br />
-                     <br />
-                     Navoiy yosh saylovchilariga saylov jarayoni haqida muntazam ma’lumot berib boruvchi yoshsaylovchi.uz elektron platformasi haqida ma'lumotlar berildi.
-                     <br />
-                     <br />
-
-                     "Yosh saylovchi" forumi bugun Samarqand viloyatida davom etadi. 16-sentabr kuni “Adiblar xiyoboni”da loyihaning so‘nggi finali bo‘lib o‘tdi. Respublika bosqichida ishtirok etgan 67 nafar ishtirokchidan saralangan 10 nafar ijodkorlar 4 ta – nazm, nasr, badiiy tarjima, tasviriy san’at yo‘nalishi finalchilari bellashdilar.
+                   {elem.desc}
                   </p>
                </div>
+        )}
                <div className={styles.right}>
                   <h2 className={styles.h2}>
                      IMkoniyatlar

@@ -1,0 +1,145 @@
+.container {
+    max-width: 1240px;
+    width: 100%;
+    padding: 10px 10px;
+    margin: 0px auto;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hr1 {
+    width: 15%;
+    background-color: #5D74C5;
+}
+
+.hr2 {
+    background-color: #5D74C5;
+    width: 70%;
+}
+
+.h1 {
+    color: #5D74C5;
+    font-family: Montserrat;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40.8px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.contentHead {
+    text-align: left;
+}
+
+.contentHead__h1 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 40.8px;
+    letter-spacing: -0.03em;
+    text-align: left;
+    color: #8AA7F0;
+}
+
+.links {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.links__link {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: #295DB5;
+    text-decoration: none;
+}
+
+.links__p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    text-align: left;
+    color: #121212;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons__button {
+    border: 1px solid #3D7DA9;
+    border-radius: 3px;
+    color: #3D7DA9;
+    background-color: white;
+    height: 36px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.buttons__button_this {
+    border: none;
+    border-radius: 3px;
+    background-color: #3D7DA9;
+    color: white;
+    height: 36px;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.5px;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.left {
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+  padding: 60px 0;
+}
+
+.box {
+    width: 320px;
+    height: 427px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.h3 {
+    position: absolute;
+    bottom: 85px;
+    left: 20px;
+    right: 13px;
+    text-align: center;
+    margin: 0;
+    padding: 2px;
+    font-family: Montserrat;
+    font-size: 14.27px;
+    font-weight: 500;
+    line-height: 10.76px;
+    text-align: left;
+    color: white;
+}
+
+.p {
+    font-family: DM Sans;
+    font-size: 14.41px;
+    font-weight: 400;
+    line-height: 16.16px;
+    text-align: left;
+    color: white;
+    position: absolute;
+    bottom: 30px;
+    left: 22px;
+}

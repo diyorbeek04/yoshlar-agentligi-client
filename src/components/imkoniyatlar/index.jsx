@@ -1,10 +1,24 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from './style.module.css'
 import axios from "axios";
 import image from './images/img1.png'
+import { useNavigate } from 'react-router-dom'
+import { navigate } from "react-router-dom";
 
 function ImkoniyatlarComponent() {
-   const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+   const [data , setData] = useState([])
+   const navigate = useNavigate();
+
+   useEffect( () =>{
+      axios.get(`https://apiastro1.vtormetallmm.ru/possibilities`)
+      .then((data) => setData(data))
+  }, [])
+
+
+  const HandleMore = (e) => {
+   navigate(`/imkoniyatlar/${e.target.id}`)
+ }
+   // const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
    return (
 
       <>
@@ -18,12 +32,12 @@ function ImkoniyatlarComponent() {
         <div className="container">
         <div className={styles.container}>
             <div className={styles.left}>
-               {data.map((elem, index) =>
+               {data?.data?.map((elem, index) =>
 
-                  <div key={index} className={styles.box}>
-                     <img src={image} alt="image" />
-                     <h3 className={styles.h3}>{"Yoshlar bandligini ta’minlash va rivojlantirish".slice(0 , 29)}...</h3>
-                     <p className={styles.p}>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc.”</p>
+                  <div key={index} className={styles.box} id={elem.id} onClick={(e) =>  HandleMore(e)} >
+                     <img id={elem.id} src={image} alt="image" />
+                     <h3 id={elem.id} className={styles.h3}>{elem.title.slice(0 , 29)}...</h3>
+                     <p id={elem.id} className={styles.p}>{elem.desc.slice(0, 40)}...</p>
                   </div>
                )}
             </div>
